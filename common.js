@@ -41,7 +41,7 @@ const f = function*(n) {
 
 const arr= [];
 
-let N = +prompt('Вкажіть ціле число.')
+const N = +prompt('Вкажіть ціле число.')
 
 if(Number.isInteger(N) && N > 0){
     for (const x of f(N)) {
@@ -58,7 +58,7 @@ if(Number.isInteger(N) && N > 0){
 
 const nNew = +prompt('Введить ціле число.');
 
-if(Number.isInteger(nNew)){
+if(Number.isInteger(nNew) && nNew > 1 ){
 
     alert(`Дякую, ви ввели ціле число = ${nNew}`)
 
@@ -70,11 +70,10 @@ if(Number.isInteger(nNew)){
             }
             return alert(`${nNew} = просте число.`);
     }
+    primeNumber(nNew);
 }else {
     alert('Ви ввели не валідні дані.');
 }
-
-primeNumber(nNew);
 
 
 /*     П'ята дія     */
@@ -89,13 +88,11 @@ if(numberFromUser >= 3) {
     for (let j= 2; i < j; i++, j++) {
         const exponent = Math.pow(3, i);
          result = numberFromUser === exponent
-        console.log(exponent)
-        console.log(i)
-        console.log(result)
+
         if (result ){
             break
         }
-        if(j === numberFromUser || exponent === Infinity){
+        if(exponent >= numberFromUser){
             break
         }
     }
